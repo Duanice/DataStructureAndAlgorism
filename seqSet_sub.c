@@ -5,8 +5,8 @@ int len;
 
 struct SequSet{
 ElementType *set;
-int len;//¼¯ºÏµ±Ç°³¤¶È
-int MaxSize;//setÊı×é³¤¶È
+int len;//é›†åˆå½“å‰é•¿åº¦
+int MaxSize;//setæ•°ç»„é•¿åº¦
 };
 
 typedef struct SequSet *Set;
@@ -18,11 +18,11 @@ void initSet(Set S,int ms)
     else S->MaxSize=ms;
     S->set=calloc(S->MaxSize,sizeof(ElementType));
     if(!S->set){
-        printf("¶¯Ì¬¿Õ¼ä·ÖÅä²»×ã£¡\n");
+        printf("åŠ¨æ€ç©ºé—´åˆ†é…ä¸è¶³ï¼\n");
         exit(1);
     }
     else{
-        printf("·ÖÅä³É¹¦£¡\n");
+        printf("åˆ†é…æˆåŠŸï¼\n");
     }
     S->len=0;
 }
@@ -46,7 +46,7 @@ int  insertSet(Set S,ElementType item)
         if(!S->set)
         {
 
-            printf("ÄÚ´æ·ÖÅä²»×ã");
+            printf("å†…å­˜åˆ†é…ä¸è¶³");
             return 0;
         }
         S->MaxSize=2*S->MaxSize;
@@ -68,7 +68,7 @@ void showSet(Set S)
 }
 
 
-//É¾³ıÔªËØ £¨ÎÒ
+//åˆ é™¤å…ƒç´  ï¼ˆæˆ‘
 void deleteSet1(Set S,ElementType item)
 {
 
@@ -93,7 +93,7 @@ void deleteSet1(Set S,ElementType item)
     }
 }
 
-//É¾³ıÔªËØ £¨Êé
+//åˆ é™¤å…ƒç´  ï¼ˆä¹¦
 
 int deleteSet(Set S,ElementType item)
 {
@@ -113,7 +113,7 @@ int deleteSet(Set S,ElementType item)
         return 1;
     }
     else {
-            printf("ÔªËØ²»´æÔÚ!\n");
+            printf("å…ƒç´ ä¸å­˜åœ¨!\n");
         return 0;
     }
 
@@ -233,7 +233,7 @@ int main()
 //    struct SequSet s,*newS=&s;
 //    initSet(newS,11);
 //
-//    //Ìí¼ÓÔªËØ
+//    //æ·»åŠ å…ƒç´ 
 //    insertSet(newS,4);
 //    insertSet(newS,6);
 //    insertSet(newS,5);
@@ -242,49 +242,49 @@ int main()
 //    insertSet(newS,6);
 //    showSet(newS);
 
-    //É¾³ıÔªËØ
+    //åˆ é™¤å…ƒç´ 
 //    printf("%d\n",deleteSet(newS,5));
 //    showSet(newS);
 
 
-    //²éÕÒÔªËØ
+    //æŸ¥æ‰¾å…ƒç´ 
 //    int data,index;
-//    printf("ÇëÊäÈëÒª²éÕÒµÄÔªËØ£º\n");
+//    printf("è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„å…ƒç´ ï¼š\n");
 //    scanf("%d",&data);
 //    if(findSet(newS,&data,&index))
 //    {
 //        printf("*item=%d;index=%d",data,index);
 //    }
 //    else{
-//        printf("²éÕÒÊ§°Ü\n");
+//        printf("æŸ¥æ‰¾å¤±è´¥\n");
 //    }
 
 
-    //²é¿´ÔªËØÊÇ·ñÔÚ¼¯ºÏÄÚ
+    //æŸ¥çœ‹å…ƒç´ æ˜¯å¦åœ¨é›†åˆå†…
 //
 //    if(inSet(newS,4)){
-//        printf("ÔªËØÔÚ¼¯ºÏÄÚ\n");
+//        printf("å…ƒç´ åœ¨é›†åˆå†…\n");
 //    }
 //    else{
-//        printf("ÔªËØ²»ÔÚ¼¯ºÏÄÚ\n");
+//        printf("å…ƒç´ ä¸åœ¨é›†åˆå†…\n");
 //    }
 
-     //ÅĞ¶Ï¼¯ºÏÊÇ·ñÎª¿Õ
+     //åˆ¤æ–­é›†åˆæ˜¯å¦ä¸ºç©º
 
 //    if(isEmpty(newS))
 //    {
 //
-//        printf("¿Õ¼¯£¡\n");
+//        printf("ç©ºé›†ï¼\n");
 //    }
 //    else{
-//        printf("²»ÊÇ¿Õ¼¯\n");
+//        printf("ä¸æ˜¯ç©ºé›†\n");
 //    }
 
-    //ÇóÔªËØµÄ¸öÊı
-//    printf("ÔªËØ¸öÊıÊÇ%d\n",lengthSet(newS));
+    //æ±‚å…ƒç´ çš„ä¸ªæ•°
+//    printf("å…ƒç´ ä¸ªæ•°æ˜¯%d\n",lengthSet(newS));
 
 
-    //ÇóÁ½¸ö¼¯ºÏ²¢¼¯
+    //æ±‚ä¸¤ä¸ªé›†åˆå¹¶é›†
     struct SequSet s1,s2,*ps1=&s1,*ps2=&s2;
     initSet(ps1,10);
     initSet(ps2,3);
@@ -301,15 +301,15 @@ int main()
     showSet(ps2);
 
 
-//²¢¼¯
+//å¹¶é›†
     Set S=malloc(sizeof(struct SequSet));
     S=unionSet(ps1,ps2);
     showSet(S);
-//½»¼¯
+//äº¤é›†
     Set SS=malloc(sizeof(struct SequSet));
     SS=interseSet(ps1,ps2);
     showSet(S);
-    //²î¼¯
+    //å·®é›†
     Set SSS=malloc(sizeof(struct SequSet));
     SSS=differenceSet(ps1,ps2);
     showSet(SSS);
