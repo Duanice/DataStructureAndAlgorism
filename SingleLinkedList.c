@@ -23,7 +23,7 @@ int insertListByOrder(List L,ElementType item)
         struct SingleNode *tp=malloc(sizeof(struct SingleNode));
         initList(tp,1);
         if(!tp){
-            printf("¶¯Ì¬¿Õ¼äÓÃÍê!");
+            printf("åŠ¨æ€ç©ºé—´ç”¨å®Œ!");
             return 0;
         }
         tp->data=item;
@@ -40,7 +40,7 @@ int insertList(List L,ElementType item,int k)
     struct SingleNode *plist=L;
     struct SingleNode *tp=malloc(sizeof(struct SingleNode));
     if(!tp){
-        printf("ÄÚ´æ·ÖÅäÊ§°Ü\n!");
+        printf("å†…å­˜åˆ†é…å¤±è´¥\n!");
         return 0;
     }
     while(plist->next){
@@ -62,7 +62,7 @@ void showList(List L){
             printf("%d\t",ps->data);
             ps=ps->next;
         }
-        printf("ÒÑ¾­showÁË\n");
+        printf("å·²ç»showäº†\n");
 return;
 }
  ElementType getList(List L,Position pos){
@@ -113,7 +113,7 @@ return;
          p=p->next;
      }
      if(flag==0){
-        printf("ÎŞ¿ÉĞŞ¸ÄÔªËØ\n");
+        printf("æ— å¯ä¿®æ”¹å…ƒç´ \n");
      }
      return flag;
  }
@@ -168,7 +168,7 @@ return;
         if(!r)
         {
 
-            printf("ÄÚ´æ·ÖÅäÊ§°Ü\n");
+            printf("å†…å­˜åˆ†é…å¤±è´¥\n");
             return NULL;
         }
         r->data=p->data;
@@ -201,37 +201,37 @@ int main()
 {
     struct SingleNode list1,*plist1=&list1;
 
-    //³õÊ¼»¯
+    //åˆå§‹åŒ–
     initList(plist1,1);
 
-    //²åÈëÔªËØ
+    //æ’å…¥å…ƒç´ 
     for(int i=0;i<12;i++)
     {
         insertList(plist1,12-i,i);
     }
     showList(plist1);
 
-    //µÃµ½µÚpos¸öÔªËØµÄÖµ
-    printf("µÚ5¸öÔªËØÊÇ%d\n",getList(plist1,5));
+    //å¾—åˆ°ç¬¬posä¸ªå…ƒç´ çš„å€¼
+    printf("ç¬¬5ä¸ªå…ƒç´ æ˜¯%d\n",getList(plist1,5));
 
-    //µÃµ½ÖµÎªitemµÄÎ»ÖÃ
-    printf("%dÔÚµÚ%d¸ö\n",10,FindList(plist1,10));
+    //å¾—åˆ°å€¼ä¸ºitemçš„ä½ç½®
+    printf("%dåœ¨ç¬¬%dä¸ª\n",10,FindList(plist1,10));
 
-    //ĞŞ¸ÄÖµÎªitemµÄ½ÚµãÖµ
+    //ä¿®æ”¹å€¼ä¸ºitemçš„èŠ‚ç‚¹å€¼
     modifyList(plist1,6,7);
     showList(plist1);
 
-    //É¾³ıÄ³ÔªËØ
+    //åˆ é™¤æŸå…ƒç´ 
     deleteList(plist1,2);
     showList(plist1);
-    //ÏßĞÔ±í³¤¶È
-    printf("ÏßĞÔ±í³¤%d\n",lengthList(plist1));
+    //çº¿æ€§è¡¨é•¿åº¦
+    printf("çº¿æ€§è¡¨é•¿%d\n",lengthList(plist1));
 
-    //°´ÕÕ¹Ø¼ü×ÖÅÅĞò
+    //æŒ‰ç…§å…³é”®å­—æ’åº
     List ss=sortList(plist1);
     showList(ss);
 
-    //Çå¿ÕÁ´±í
+    //æ¸…ç©ºé“¾è¡¨
     clearList(plist1);
     showList(plist1);
 
