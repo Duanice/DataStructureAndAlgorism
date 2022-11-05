@@ -25,7 +25,7 @@ int insertSet(Set S,ElementType item)
     if(!tp)
     {
 
-        printf("动态空间用完！\n");
+        printf("鍔ㄦ�佺┖闂寸敤瀹岋紒\n");
         return 0;
     }
     tp->data=item;
@@ -52,7 +52,7 @@ void showSet(Set S)
         printf("%d\t",p->data);
         p=p->next;
     }
-    printf("已经show\n");
+    printf("宸茬粡show\n");
 }
 
 
@@ -200,19 +200,19 @@ int main()
 //    printf("Set Length  %d\n",lengthSet(ps1));
 
 
-//并集
+//骞堕泦
     s=UnionSet(ps1,ps2);
     showSet(s);
-//交集
+//浜ら泦
     ss=interseSet(ps1,ps2);
     showSet(ss);
 
-//差集
+//宸泦
     sss=differenceSet(ps1,ps2);
     showSet(sss);
 
 
-//清除
+//娓呴櫎
 
     clearSet(ps1);
     showSet(ps1);
